@@ -40,10 +40,11 @@ From a stakeholder perspective, the dashboard helps answer practical questions:
 These insights support framing discussions around allocation, hedging, or timing—while acknowledging that this is a monitoring tool rather than a trading system.
 
 ## Live Dashboard Link
-**Live App:** [PASTE STREAMLIT LINK HERE]
+**Live App:**(https://financial-dashboard-shahad-almutairi-b4sfm3nfupscukamtsjjnr.streamlit.app/)]
 
 ## Assumptions & Limitations
 - Metrics are estimates based on historical prices and depend on the selected sampling frequency.
 - Sharpe ratio is simplified and uses a user-selected risk-free rate.
 - Yahoo Finance availability may vary by ticker and time window. For robustness, the dashboard supports switching assets and comparing major equities.
+
 - This dashboard is designed for monitoring and communication, not as financial advice or a trading recommendation.

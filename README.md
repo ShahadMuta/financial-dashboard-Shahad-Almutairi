@@ -36,12 +36,13 @@ The purpose of the dashboard is monitoring and structured communication of marke
 ---
 
 ## Dashboard Screenshots
-(Dashboard1.png)
-(dashboard2.png)
-(Dashboard3.png)
-(Dashboard4.png)
-(Dashboard5.png)
-(Dashboard6.png)
+
+![Dashboard Overview](Dashboard1.png)
+![Trend Analysis](dashboard2.png)
+![Risk View](Dashboard3.png)
+![Volatility](Dashboard4.png)
+![Distribution](Dashboard5.png)
+![Data View](Dashboard6.png)
 
 ---
 

@@ -3,58 +3,71 @@
 
 ## Project Overview
 
-This project delivers a live, interactive dashboard designed to summarize market performance and risk dynamics in the Saudi equity market. The primary objective is to provide a clear, stakeholder-friendly view that supports strategic investment discussions without requiring deep technical expertise.
+This project presents a live, interactive market intelligence dashboard designed to analyze performance dynamics and risk characteristics within the Saudi equity market. The objective is to provide a clear, stakeholder-friendly analytical view that supports strategic investment discussions without requiring deep technical expertise.
 
-The dashboard follows a structured narrative similar to how an investment committee would review markets: beginning with an executive performance comparison, then drilling into trend behavior, and finally analyzing risk characteristics such as volatility, drawdowns, and return distribution. The focus is on clarity, interpretability, and decision-support rather than price prediction.
+Rather than presenting isolated charts, the dashboard follows a structured narrative similar to how an investment committee might review markets. It begins with a high-level executive performance comparison, then explores trend behavior across selected assets, and finally evaluates key risk indicators such as volatility, maximum drawdown, and return distribution. The focus throughout the design is clarity, interpretability, and decision support rather than price prediction or algorithmic trading.
+
+The dashboard is built using **Streamlit** and deployed via **Streamlit Community Cloud**, ensuring real-time interactivity and online accessibility.
 
 ---
 
 ## Data Source
 
-Market data is retrieved using the **Yahoo Finance API via the yfinance Python library**. The dashboard supports the TASI index (^TASI) when available, as well as major Saudi equities including:
+Market data is retrieved using publicly available price data from Yahoo Finance through the **yfinance** Python library. The dashboard supports the TASI index (^TASI) when available, alongside major Saudi equities including:
 
 - 2222.SR (Saudi Aramco)  
 - 1120.SR (Al Rajhi Bank)  
 - 2010.SR (SABIC)  
 - 7010.SR (STC)  
 
-Historical Open, High, Low, Close, and (when available) Volume data are used to compute return-based indicators and risk metrics.
+Historical Open, High, Low, Close, and (when available) Volume data are used to compute return-based performance measures and risk indicators.
+
+Representative CSV exports of the analyzed instruments are included in the `/datasets` folder to ensure transparency and reproducibility.
 
 ---
 
 ## Methodology
 
-The analytical workflow follows a simplified financial analytics pipeline:
+The analytical workflow follows a structured financial analytics pipeline.
 
-1. **Data Extraction** – Download historical time-series data for a selected lookback window and frequency.
-2. **Data Preparation** – Remove missing observations and generate time-based aggregations.
-3. **Metric Computation** – Calculate annualized volatility, maximum drawdown, Sharpe ratio (using a configurable risk-free rate), and normalized relative performance.
-4. **Dashboard Design** – Present outputs using KPI cards, structured sections, and interactive filters to ensure accessibility for non-technical stakeholders.
+First, historical time-series data are extracted for a selected lookback window and sampling frequency. The data are then cleaned to remove missing observations and transformed into return series to enable risk and performance analysis.
 
-The purpose of the dashboard is monitoring and structured communication of market behavior rather than forecasting or algorithmic trading.
+Next, core performance and risk metrics are computed, including:
+
+- Annualized volatility  
+- Maximum drawdown (peak-to-trough decline)  
+- Simplified Sharpe ratio using a configurable risk-free rate  
+- Normalized relative performance for cross-asset comparison  
+
+Relative performance is normalized to a common base value to allow assets with different price levels to be compared on equal footing.
+
+The dashboard interface is structured using KPI cards, clearly labeled sections, and interactive filters to maintain accessibility for non-technical stakeholders while preserving analytical depth.
+
+The purpose of this dashboard is structured market monitoring and communication rather than forecasting or investment recommendation.
 
 ---
 
 ## Dashboard Screenshots
 
-![Dashboard Overview](Dashboard1.png)
+### Executive Overview
+![Executive Overview](Dashboard1.png)
+
+### Price Trend Analysis
 ![Price Trend](Dashboard4.png)
+
+### Risk & Drawdown Analysis
 ![Risk](Dashboard5.png)
-![Data View](Dashboard6.png) 
+
+### Data Appendix
+![Data View](Dashboard6.png)
 
 ---
 
 ## Key Insights
 
-From a stakeholder perspective, the dashboard enables practical market interpretation:
+From a stakeholder perspective, the dashboard enables structured interpretation of Saudi market behavior. It supports evaluation of relative performance between major equities, identification of prevailing volatility regimes, and understanding of worst-case drawdown experiences over selected periods.
 
-- Assessment of relative performance between major Saudi equities.
-- Identification of prevailing volatility regimes.
-- Understanding of worst peak-to-trough declines.
-- Contextual interpretation of return distribution patterns.
-- Framing allocation discussions based on risk-adjusted performance metrics.
-
-The dashboard supports informed discussion and monitoring, while recognizing that market behavior is inherently uncertain.
+By combining normalized performance views with risk-adjusted metrics, the dashboard helps frame allocation discussions and risk awareness conversations while acknowledging that historical performance does not guarantee future results.
 
 ---
 
@@ -65,14 +78,12 @@ https://financial-dashboard-shahad-almutairi-b4sfm3nfupscukamtsjjnr.streamlit.ap
 
 ---
 
-## Assumptions & Limitations
+## Assumptions and Limitations
 
-All metrics are derived from historical price data and are therefore backward-looking.
+All metrics presented are derived from historical price data and are therefore backward-looking in nature.
 
-The Sharpe ratio is a simplified estimate using a user-defined risk-free rate.
+The Sharpe ratio is a simplified estimate and depends on the user-selected risk-free rate.
 
-Yahoo Finance data availability may vary by ticker or time window.
+Yahoo Finance data availability may vary across tickers and time windows.
 
-This dashboard is intended strictly for analytical and educational purposes and does not constitute financial advice.
-
-
+This dashboard is intended strictly for analytical and educational purposes and does not constitute financial advice or an investment recommendation.

@@ -50,16 +50,16 @@ The purpose of this dashboard is structured market monitoring and communication 
 ## Dashboard Screenshots
 
 ### Executive Overview
-![Executive Overview](Dashboard1.png)
+![Executive Overview](images/Dashboard1.png)
 
 ### Price Trend Analysis
-![Price Trend](Dashboard4.png)
+![Price Trend](images/Dashboard4.png)
 
 ### Risk & Drawdown Analysis
-![Risk](Dashboard5.png)
+![Risk](images/Dashboard5.png)
 
 ### Data Appendix
-![Data View](Dashboard6.png)
+![Data View](images/Dashboard6.png)
 
 ---
 
@@ -87,3 +87,4 @@ The Sharpe ratio is a simplified estimate and depends on the user-selected risk-
 Yahoo Finance data availability may vary across tickers and time windows.
 
 This dashboard is intended strictly for analytical and educational purposes and does not constitute financial advice or an investment recommendation.
+
